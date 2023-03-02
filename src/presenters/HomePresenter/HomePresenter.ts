@@ -13,11 +13,11 @@ class HomePresenter {
 	}
 
 	get buttonLabel() {
-		return 'Nueva Partida';
+		return 'Nueva partida';
 	}
 
 	onButtonPress = () => {
-		this.navigation.push(ROUTES.CreateNewGame.name);
+		this.navigation.navigate(ROUTES.CreateNewGame.name);
 	};
 }
 

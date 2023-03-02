@@ -7,8 +7,14 @@ const Home = () => {
 	const presenter = useHomePresenter();
 	return (
 		<View style={styles.container}>
-			<Text style={styles.title}>{presenter.screenTitle}</Text>
-			<Pressable style={styles.button} onPress={presenter.onButtonPress}>
+			<Text testID={'title'} style={styles.title}>
+				{presenter.screenTitle}
+			</Text>
+			<Pressable
+				testID={'newGame'}
+				style={styles.button}
+				onPress={presenter.onButtonPress}
+			>
 				<Text style={styles.buttonLabel}>{presenter.buttonLabel}</Text>
 			</Pressable>
 		</View>

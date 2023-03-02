@@ -4,7 +4,6 @@ import HomePresenter from './HomePresenter';
 
 const useHomePresenter = () => {
 	const navigation = useNavigation();
-	// TODO: Make this reactive
 	const createPresenter = () => {
 		return new HomePresenter({ navigation });
 	};

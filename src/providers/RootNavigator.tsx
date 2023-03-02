@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ROUTES } from '../constants/routes';
 import CreateNewGame from '../screens/CreateNewGame/CreateNewGame';
 import Home from '../screens/Home/Home';
+import { observer } from 'mobx-react-lite';
 
 const RootNavigator = () => {
 	const Stack = createNativeStackNavigator();

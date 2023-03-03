@@ -13,6 +13,7 @@ const presenter = {
 
 mockUsePresenter(useHomePresenter, presenter);
 
+
 describe('Home', () => {
 	it('should render correctly', () => {
 		const screen = render(<Home />);

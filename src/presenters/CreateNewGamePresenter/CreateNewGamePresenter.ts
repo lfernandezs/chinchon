@@ -4,7 +4,7 @@ import iCreateNewGamePresenterProps from './CreateNewGamePresenter.types';
 
 class CreateNewGamePresenter {
 	navigation: iCreateNewGamePresenterProps['navigation'];
-	_numberOfPlayers: number;
+	private _numberOfPlayers: number;
 
 	constructor({ navigation }: iCreateNewGamePresenterProps) {
 		this.navigation = navigation;

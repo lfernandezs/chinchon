@@ -2,14 +2,17 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import '@testing-library/jest-native/extend-expect';
 import Home from '../../screens/Home/Home';
+import * as useHomePresenter from '../../presenters/HomePresenter/useHomePresenter';
+import mockUsePresenter from '../mocks/mockUsePresenter';
 
-const mockNavigate = jest.fn();
+const presenter = {
+	screenTitle: 'Chinchón',
+	buttonLabel: 'Nueva partida',
+	onButtonPress: jest.fn(),
+};
 
-jest.mock('@react-navigation/native', () => ({
-	useNavigation: () => ({
-		navigate: mockNavigate,
-	}),
-}));
+mockUsePresenter(useHomePresenter, presenter);
+
 
 describe('Home', () => {
 	it('should render correctly', () => {
@@ -23,14 +26,14 @@ describe('Home', () => {
 			const { getByTestId } = render(<Home />);
 
 			expect(getByTestId('title')).toBeTruthy();
-			expect(getByTestId('title')).toHaveTextContent('Chinchón');
+			expect(getByTestId('title')).toHaveTextContent(presenter.screenTitle);
 		});
 
 		it('should render the button to start a new game', () => {
 			const { getByTestId } = render(<Home />);
 
 			expect(getByTestId('newGame')).toBeTruthy();
-			expect(getByTestId('newGame')).toHaveTextContent('Nueva partida');
+			expect(getByTestId('newGame')).toHaveTextContent(presenter.buttonLabel);
 		});
 	});
 
@@ -39,7 +42,7 @@ describe('Home', () => {
 			const { getByTestId } = render(<Home />);
 			const button = getByTestId('newGame');
 			fireEvent.press(button);
-			expect(mockNavigate).toHaveBeenCalled();
+			expect(presenter.onButtonPress).toHaveBeenCalled();
 		});
 	});
 });

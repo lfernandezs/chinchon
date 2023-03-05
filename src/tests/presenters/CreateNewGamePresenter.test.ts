@@ -40,6 +40,12 @@ describe('CreateNewGamePresenter', () => {
 		});
 	});
 
+	describe('@scrollRef', () => {
+		it('should return the correct scroll ref', () => {
+			expect(presenter.scrollRef).toBe(scrollRef);
+		});
+	});
+
 	describe('onPlusButtonPress', () => {
 		it('should increase the number of players', () => {
 			presenter.onPlusButtonPress();

@@ -59,6 +59,9 @@
 			"!<rootDir>/src/tests/**",
 			"!<rootDir>/src/presenters/**/use*.ts",
 			"!**/*.types.*"
+		],
+		"setupFilesAfterEnv": [
+			"<rootDir>/config/jest.setup.ts"
 		]
 	}
 }

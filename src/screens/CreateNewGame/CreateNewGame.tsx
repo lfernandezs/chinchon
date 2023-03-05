@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-	ScrollView,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	View,
-} from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import useCreateNewGamePresenter from '../../presenters/CreateNewGamePresenter/useCreateNewGamePresenter';
 import styles from './CreateNewGame.styles';
 import { observer } from 'mobx-react-lite';
+import BaseView from '../../components/BaseView/BaseView';
 
 const CreateNewGame = () => {
 	const presenter = useCreateNewGamePresenter();
 	return (
-		<ScrollView contentContainerStyle={{ flex: 1 }}>
+		<BaseView scrollRef={presenter.scrollRef}>
 			<View style={styles.container}>
 				<Text testID={'title'} style={styles.title}>
 					Jugadores
@@ -42,7 +37,7 @@ const CreateNewGame = () => {
 					</Text>
 				</TouchableOpacity>
 			</View>
-		</ScrollView>
+		</BaseView>
 	);
 };
 

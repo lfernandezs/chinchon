@@ -1,11 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import CreateNewGamePresenter from './CreateNewGamePresenter';
 
 const useCreateNewGamePresenter = () => {
 	const navigation = useNavigation();
+	const scrollRef = useRef();
 	const createPresenter = () => {
-		return new CreateNewGamePresenter({ navigation });
+		return new CreateNewGamePresenter({ navigation, scrollRef });
 	};
 
 	const [presenter] = useState(createPresenter);

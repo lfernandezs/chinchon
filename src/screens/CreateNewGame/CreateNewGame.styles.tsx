@@ -13,8 +13,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
-		marginTop: 40,
-		marginBottom: 20,
 	},
 	title: {
 		fontSize: 40,

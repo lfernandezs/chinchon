@@ -5,10 +5,12 @@ import iCreateNewGamePresenterProps from './CreateNewGamePresenter.types';
 class CreateNewGamePresenter {
 	private _navigation: iCreateNewGamePresenterProps['navigation'];
 	private _numberOfPlayers: number;
+	private _scrollRef: iCreateNewGamePresenterProps['scrollRef'];
 
-	constructor({ navigation }: iCreateNewGamePresenterProps) {
+	constructor({ navigation, scrollRef }: iCreateNewGamePresenterProps) {
 		this._navigation = navigation;
 		this._numberOfPlayers = 2;
+		this._scrollRef = scrollRef;
 		makeAutoObservable(this);
 	}
 
@@ -20,11 +22,15 @@ class CreateNewGamePresenter {
 		return this._numberOfPlayers >= MAX_NUMBER_OF_PLAYERS;
 	}
 
+	get scrollRef() {
+		return this._scrollRef;
+	}
+
 	onPlusButtonPress = () => {
-		this._numberOfPlayers = Math.min(
-			this._numberOfPlayers + 1,
-			MAX_NUMBER_OF_PLAYERS
-		);
+		if (this._numberOfPlayers < MAX_NUMBER_OF_PLAYERS) {
+			this._numberOfPlayers++;
+			this._scrollRef.current?.scrollForExtraHeightOnAndroid(80);
+		}
 	};
 
 	focusInput(key: number) {

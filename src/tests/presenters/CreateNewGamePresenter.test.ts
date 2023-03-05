@@ -1,3 +1,5 @@
+import React from 'react';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { MAX_NUMBER_OF_PLAYERS } from '../../constants/constants';
 import CreateNewGamePresenter from '../../presenters/CreateNewGamePresenter/CreateNewGamePresenter';
 
@@ -14,10 +16,16 @@ describe('CreateNewGamePresenter', () => {
 		navigate: jest.fn(),
 	};
 
+	const scrollRef = {
+		current: {
+			scrollForExtraHeightOnAndroid: jest.fn(),
+		},
+	} as unknown as React.RefObject<KeyboardAwareScrollView>;
+
 	let presenter;
 
 	beforeEach(() => {
-		presenter = new CreateNewGamePresenter({ navigation });
+		presenter = new CreateNewGamePresenter({ navigation, scrollRef });
 	});
 
 	describe('@numberOfPlayers', () => {
@@ -50,6 +58,13 @@ describe('CreateNewGamePresenter', () => {
 				presenter.onPlusButtonPress();
 			}
 			expect(presenter.plusButtonDisabled).toBe(true);
+		});
+
+		it('should scroll the view when the number of players is increased', () => {
+			presenter.onPlusButtonPress();
+			expect(
+				scrollRef.current.scrollForExtraHeightOnAndroid
+			).toHaveBeenCalledWith(80);
 		});
 	});
 

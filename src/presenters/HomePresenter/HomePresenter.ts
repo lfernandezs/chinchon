@@ -2,10 +2,10 @@ import { ROUTES } from '../../constants/routes';
 import { iHomePresenterProps } from './HomePresenter.types';
 
 class HomePresenter {
-	navigation: iHomePresenterProps['navigation'];
+	private _navigation: iHomePresenterProps['navigation'];
 
 	constructor({ navigation }: iHomePresenterProps) {
-		this.navigation = navigation;
+		this._navigation = navigation;
 	}
 
 	get screenTitle() {
@@ -17,7 +17,7 @@ class HomePresenter {
 	}
 
 	onButtonPress = () => {
-		this.navigation.navigate(ROUTES.CreateNewGame.name);
+		this._navigation.navigate(ROUTES.CreateNewGame.name);
 	};
 }
 

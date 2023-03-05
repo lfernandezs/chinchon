@@ -11,7 +11,7 @@ const Home = () => {
 				{presenter.screenTitle}
 			</Text>
 			<Pressable
-				testID={'newGame'}
+				testID={'new-game'}
 				style={styles.button}
 				onPress={presenter.onButtonPress}
 			>

@@ -15,9 +15,12 @@ const CreateNewGame = () => {
 	return (
 		<ScrollView contentContainerStyle={{ flex: 1 }}>
 			<View style={styles.container}>
-				<Text style={styles.title}>Jugadores</Text>
+				<Text testID={'title'} style={styles.title}>
+					Jugadores
+				</Text>
 				{[...Array(presenter.numberOfPlayers)].map((value, key) => (
 					<TextInput
+						testID={`player-input-${key}`}
 						key={key}
 						style={styles.input}
 						placeholder={`Jugador ${key + 1}`}
@@ -25,6 +28,7 @@ const CreateNewGame = () => {
 					/>
 				))}
 				<TouchableOpacity
+					testID={'plus-button'}
 					style={
 						!presenter.plusButtonDisabled
 							? styles.plusButtonEnabled
@@ -33,7 +37,9 @@ const CreateNewGame = () => {
 					onPress={presenter.onPlusButtonPress}
 					disabled={presenter.plusButtonDisabled}
 				>
-					<Text style={styles.plus}>+</Text>
+					<Text testID={'plus-button-text'} style={styles.plus}>
+						+
+					</Text>
 				</TouchableOpacity>
 			</View>
 		</ScrollView>

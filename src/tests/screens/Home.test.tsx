@@ -13,7 +13,6 @@ const presenter = {
 
 mockUsePresenter(useHomePresenter, presenter);
 
-
 describe('Home', () => {
 	it('should render correctly', () => {
 		const screen = render(<Home />);
@@ -32,15 +31,15 @@ describe('Home', () => {
 		it('should render the button to start a new game', () => {
 			const { getByTestId } = render(<Home />);
 
-			expect(getByTestId('newGame')).toBeTruthy();
-			expect(getByTestId('newGame')).toHaveTextContent(presenter.buttonLabel);
+			expect(getByTestId('new-game')).toBeTruthy();
+			expect(getByTestId('new-game')).toHaveTextContent(presenter.buttonLabel);
 		});
 	});
 
 	describe('when the button to start a new game is pressed', () => {
 		it('should navigate to the NewGame screen', async () => {
 			const { getByTestId } = render(<Home />);
-			const button = getByTestId('newGame');
+			const button = getByTestId('new-game');
 			fireEvent.press(button);
 			expect(presenter.onButtonPress).toHaveBeenCalled();
 		});

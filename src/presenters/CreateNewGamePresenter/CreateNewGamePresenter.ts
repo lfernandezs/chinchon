@@ -3,11 +3,11 @@ import { MAX_NUMBER_OF_PLAYERS } from '../../constants/constants';
 import iCreateNewGamePresenterProps from './CreateNewGamePresenter.types';
 
 class CreateNewGamePresenter {
-	navigation: iCreateNewGamePresenterProps['navigation'];
+	private _navigation: iCreateNewGamePresenterProps['navigation'];
 	private _numberOfPlayers: number;
 
 	constructor({ navigation }: iCreateNewGamePresenterProps) {
-		this.navigation = navigation;
+		this._navigation = navigation;
 		this._numberOfPlayers = 2;
 		makeAutoObservable(this);
 	}

@@ -44,7 +44,7 @@ exports[`Home should render correctly 1`] = `
         "padding": 10,
       }
     }
-    testID="newGame"
+    testID="new-game"
   >
     <Text
       style={

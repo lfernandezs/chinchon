@@ -7,6 +7,10 @@ export default class GameStore {
 		this._games = [];
 	}
 
+	get nextId() {
+		return this._games.length;
+	}
+
 	get all() {
 		return this._games;
 	}

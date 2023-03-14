@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ROUTES } from '../constants/routes';
 import CreateNewGame from '../screens/CreateNewGame/CreateNewGame';
 import Home from '../screens/Home/Home';
+import Game from '../screens/Game/Game';
 
 const RootNavigator = () => {
 	const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ const RootNavigator = () => {
 					name={ROUTES.CreateNewGame.name}
 					component={CreateNewGame}
 				/>
+				<Stack.Screen name={ROUTES.Game.name} component={Game} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

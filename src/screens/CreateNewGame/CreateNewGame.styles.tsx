@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
+
 	title: {
 		fontSize: 40,
 		fontWeight: 'bold',
@@ -41,6 +42,19 @@ const styles = StyleSheet.create({
 
 	plus: {
 		fontSize: 20,
+		color: 'white',
+	},
+
+	createNewGameButton: {
+		width: '80%',
+		height: 40,
+		backgroundColor: 'black',
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginTop: 20,
+	},
+
+	createNewGameButtonText: {
 		color: 'white',
 	},
 });

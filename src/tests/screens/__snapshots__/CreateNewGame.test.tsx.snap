@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateNewGame should render correctly 1`] = `
+exports[`CreateNewGame renders correctly 1`] = `
 <RNCSafeAreaView
   edges={
     Array [
@@ -112,6 +112,41 @@ exports[`CreateNewGame should render correctly 1`] = `
           testID="plus-button-text"
         >
           +
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "black",
+            "height": 40,
+            "justifyContent": "center",
+            "marginTop": 20,
+            "opacity": 1,
+            "width": "80%",
+          }
+        }
+        testID="create-new-game-button"
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+          testID="create-new-game-button-text"
+        >
+          Crear partida
         </Text>
       </View>
     </View>

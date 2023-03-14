@@ -22,6 +22,36 @@ describe('GameStore', () => {
 		});
 	});
 
+	describe('@all', () => {
+		describe('if there are no games', () => {
+			it('returns an empty array', () => {
+				expect(store.all).toEqual([]);
+			});
+		});
+
+		describe('if there are games', () => {
+			it('returns the games array', () => {
+				store.add(game);
+				expect(store.all).toEqual([game]);
+			});
+		});
+	});
+
+	describe('@nextId', () => {
+		describe('if there are no games', () => {
+			it('returns 0', () => {
+				expect(store.nextId).toEqual(0);
+			});
+		});
+
+		describe('if there are games', () => {
+			it('returns the next id', () => {
+				store.add(game);
+				expect(store.nextId).toEqual(1);
+			});
+		});
+	});
+
 	describe('find', () => {
 		it('returns the game with the given id', () => {
 			store.add(game);

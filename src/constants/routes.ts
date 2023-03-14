@@ -5,4 +5,7 @@ export const ROUTES = {
 	CreateNewGame: {
 		name: 'CreateNewGame',
 	},
+	Game: {
+		name: 'Game',
+	},
 };

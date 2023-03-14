@@ -15,7 +15,7 @@ const presenter = {
 mockUsePresenter(useCreateNewGamePresenter, presenter);
 
 describe('CreateNewGame', () => {
-	it('should render correctly', () => {
+	it('renders correctly', () => {
 		const screen = render(<CreateNewGame />);
 
 		expect(screen).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe('CreateNewGame', () => {
 			expect(getByTestId('title')).toHaveTextContent('Jugadores');
 		});
 
-		it('should render the input for each player', () => {
+		it('renders the input for each player', () => {
 			const { getAllByTestId } = render(<CreateNewGame />);
 
 			expect(getAllByTestId('player-input', { exact: false })).toHaveLength(
@@ -37,13 +37,13 @@ describe('CreateNewGame', () => {
 			);
 		});
 
-		it('should render the plus button', () => {
+		it('renders the plus button', () => {
 			const { getByTestId } = render(<CreateNewGame />);
 
 			expect(getByTestId('plus-button')).toBeTruthy();
 		});
 
-		it('should render the plus button text', () => {
+		it('renders the plus button text', () => {
 			const { getByTestId } = render(<CreateNewGame />);
 
 			expect(getByTestId('plus-button-text')).toBeTruthy();
@@ -52,7 +52,7 @@ describe('CreateNewGame', () => {
 	});
 
 	describe('when the plus button is pressed', () => {
-		it('should call the presenter function', () => {
+		it('calls the presenter function', () => {
 			const { getByTestId } = render(<CreateNewGame />);
 			const button = getByTestId('plus-button');
 			fireEvent.press(button);

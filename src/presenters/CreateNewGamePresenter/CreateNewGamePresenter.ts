@@ -36,6 +36,10 @@ class CreateNewGamePresenter {
 	focusInput(key: number) {
 		return key > 1 && key === this._numberOfPlayers - 1;
 	}
+
+	onCreateNewGameButtonPress = () => {
+		this._navigation.navigate('Game');
+	};
 }
 
 export default CreateNewGamePresenter;

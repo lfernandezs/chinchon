@@ -36,6 +36,19 @@ const CreateNewGame = () => {
 						+
 					</Text>
 				</TouchableOpacity>
+
+				<TouchableOpacity
+					testID={'create-new-game-button'}
+					style={styles.createNewGameButton}
+					onPress={presenter.onCreateNewGameButtonPress}
+				>
+					<Text
+						testID={'create-new-game-button-text'}
+						style={styles.createNewGameButtonText}
+					>
+						Crear partida
+					</Text>
+				</TouchableOpacity>
 			</View>
 		</BaseView>
 	);

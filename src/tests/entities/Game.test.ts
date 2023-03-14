@@ -1,5 +1,6 @@
-import Game from '../../entities/Game';
+import Game from '../../entities/Game/Game';
 
+const id = 72;
 const players = [
 	{ name: 'John', id: 1 },
 	{ name: 'Jane', id: 2 },
@@ -10,7 +11,7 @@ describe('Game', () => {
 	let game: Game;
 
 	const setUp = ({ players }: { players: { name: string; id: number }[] }) => {
-		game = new Game({ players });
+		game = new Game({ id, players });
 	};
 
 	describe('constructor', () => {
@@ -37,6 +38,13 @@ describe('Game', () => {
 		it('sets the ranking', () => {
 			setUp({ players });
 			expect(game.ranking).toEqual(players);
+		});
+	});
+
+	describe('@id', () => {
+		it('returns the id', () => {
+			setUp({ players });
+			expect(game.id).toEqual(id);
 		});
 	});
 

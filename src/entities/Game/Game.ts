@@ -1,12 +1,19 @@
-import { LOSING_SCORE } from '../constants/constants';
+import { LOSING_SCORE } from '../../constants/constants';
+import { IGameProps } from './types';
 
 export default class Game {
-	private _players: { name: string; id: number }[];
+	private _id: IGameProps['id'];
+	private _players: IGameProps['players'];
 	private _rounds: number[][];
 
-	constructor({ players }: { players: { name: string; id: number }[] }) {
+	constructor({ id, players }: IGameProps) {
+		this._id = id;
 		this._players = players;
 		this._rounds = [];
+	}
+
+	get id() {
+		return this._id;
 	}
 
 	get players() {

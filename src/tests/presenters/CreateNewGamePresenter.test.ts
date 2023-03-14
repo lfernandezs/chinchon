@@ -87,4 +87,11 @@ describe('CreateNewGamePresenter', () => {
 			expect(presenter.focusInput(3)).toBe(true);
 		});
 	});
+
+	describe('onCreateNewGameButtonPress', () => {
+		it('should navigate to the game screen', () => {
+			presenter.onCreateNewGameButtonPress();
+			expect(navigation.navigate).toHaveBeenCalledWith('Game');
+		});
+	});
 });

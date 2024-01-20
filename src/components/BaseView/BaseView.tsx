@@ -9,10 +9,10 @@ const BaseView = ({
 	scrollRef,
 }: {
 	children: React.ReactNode;
-	scrollRef: React.RefObject<KeyboardAwareScrollView>;
+	scrollRef?: React.RefObject<KeyboardAwareScrollView>;
 }) => {
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
+		<SafeAreaView style={styles.screen}>
 			<KeyboardAwareScrollView
 				style={styles.keyboardAvoidingView}
 				contentContainerStyle={{ justifyContent: 'center', flexGrow: 1 }}

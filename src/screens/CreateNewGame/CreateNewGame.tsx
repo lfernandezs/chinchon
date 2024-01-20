@@ -13,13 +13,15 @@ const CreateNewGame = () => {
 				<Text testID={'title'} style={styles.title}>
 					Jugadores
 				</Text>
-				{[...Array(presenter.numberOfPlayers)].map((value, key) => (
+				{presenter.players.map(({ id }) => (
 					<TextInput
-						testID={`player-input-${key}`}
-						key={key}
+						testID={`player-input-${id}`}
+						key={id}
 						style={styles.input}
-						placeholder={`Jugador ${key + 1}`}
-						autoFocus={presenter.focusInput(key)}
+						placeholder={`Jugador ${id + 1}`}
+						onChangeText={(text) => presenter.onPlayerNameChange(text, id)}
+						value={presenter.players[id].name}
+						autoFocus={presenter.focusInput(id)}
 					/>
 				))}
 				<TouchableOpacity

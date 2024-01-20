@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import { LOSING_SCORE } from '../../constants/constants';
 import { IGameProps } from './types';
 
@@ -10,6 +11,7 @@ export default class Game {
 		this._id = id;
 		this._players = players;
 		this._rounds = [];
+		makeAutoObservable(this);
 	}
 
 	get id() {
@@ -58,7 +60,7 @@ export default class Game {
 
 	private _aPlayerScoredMoreThanLosingScore() {
 		return this.players.some(
-			(player) => this.getScore(player.id) > LOSING_SCORE
+			(player) => this.getScore(player.id) >= LOSING_SCORE
 		);
 	}
 }

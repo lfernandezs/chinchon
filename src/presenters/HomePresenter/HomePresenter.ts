@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import { ROUTES } from '../../constants/routes';
 import { iHomePresenterProps } from './HomePresenter.types';
 
@@ -6,6 +7,7 @@ class HomePresenter {
 
 	constructor({ navigation }: iHomePresenterProps) {
 		this._navigation = navigation;
+		makeAutoObservable(this);
 	}
 
 	get screenTitle() {

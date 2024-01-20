@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import Game from '../entities/Game/Game';
 
 export default class GameStore {
@@ -5,6 +6,7 @@ export default class GameStore {
 
 	constructor() {
 		this._games = [];
+		makeAutoObservable(this);
 	}
 
 	get nextId() {

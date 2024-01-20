@@ -5,6 +5,7 @@ import { ROUTES } from '../constants/routes';
 import CreateNewGame from '../screens/CreateNewGame/CreateNewGame';
 import Home from '../screens/Home/Home';
 import Game from '../screens/Game/Game';
+import { observer } from 'mobx-react-lite';
 
 const RootNavigator = () => {
 	const Stack = createNativeStackNavigator();
@@ -22,4 +23,4 @@ const RootNavigator = () => {
 	);
 };
 
-export default RootNavigator;
+export default observer(RootNavigator);

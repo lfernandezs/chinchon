@@ -1,7 +1,7 @@
-import StartNewRoundInGame from '../../interactors/StartNewRoundInGame';
+import StartNewRound from '../../interactors/StartNewRound';
 import GameStore from '../../stores/GameStore';
 
-describe('StartNewRoundInGame', () => {
+describe('StartNewRound', () => {
 	const id = 72;
 
 	const mockGame = {
@@ -12,15 +12,15 @@ describe('StartNewRoundInGame', () => {
 		find: jest.fn(() => mockGame),
 	} as unknown as GameStore;
 
-	let startNewRoundInGame: StartNewRoundInGame;
+	let startNewRoundInGame: StartNewRound;
 
 	beforeEach(() => {
-		startNewRoundInGame = new StartNewRoundInGame({ gameStore });
+		startNewRoundInGame = new StartNewRound({ gameStore });
 	});
 
 	describe('constructor', () => {
-		it('creates a new instance of StartNewRoundInGame', () => {
-			expect(startNewRoundInGame).toBeInstanceOf(StartNewRoundInGame);
+		it('creates a new instance of StartNewRound', () => {
+			expect(startNewRoundInGame).toBeInstanceOf(StartNewRound);
 		});
 	});
 

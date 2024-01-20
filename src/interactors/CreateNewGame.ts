@@ -1,5 +1,5 @@
+import { makeAutoObservable } from 'mobx';
 import Game from '../entities/Game/Game';
-import { IGameProps } from '../entities/Game/types';
 import GameStore from '../stores/GameStore';
 
 interface ICreateNewGameProps {
@@ -11,10 +11,13 @@ export default class CreateNewGame {
 
 	constructor({ gameStore }: ICreateNewGameProps) {
 		this._gameStore = gameStore;
+		makeAutoObservable(this);
 	}
 
-	execute({ id, players }: IGameProps) {
+	execute({ players }: { players: { name: string; id: number }[] }) {
+		const id = this._gameStore.nextId;
 		const game = new Game({ id, players });
 		this._gameStore.add(game);
+		return id;
 	}
 }

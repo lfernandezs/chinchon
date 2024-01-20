@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import GameStore from './GameStore';
 
 let sharedInstance: RootStore;
@@ -7,6 +8,7 @@ export default class RootStore {
 
 	constructor() {
 		this.gameStore = new GameStore();
+		makeAutoObservable(this);
 	}
 
 	static shared = () => {

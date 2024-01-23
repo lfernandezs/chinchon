@@ -1,31 +1,40 @@
 {
-	"expo": {
-		"name": "chinchon",
-		"slug": "chinchon",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./src/assets/icon.png",
-		"userInterfaceStyle": "light",
-		"splash": {
-			"image": "./src/assets/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./src/assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			}
-		},
-		"web": {
-			"favicon": "./src/assets/favicon.png"
-		}
-	}
+  "expo": {
+    "name": "chinchon",
+    "slug": "chinchon",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lfernandezs.chinchon"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.lfernandezs.chinchon"
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4457ac26-2ccb-4fa5-b0d4-dd30e932d7b1"
+      }
+    }
+  }
 }

@@ -16,5 +16,6 @@ export default class StartNewRound {
 	execute({ id, scores }: { id: number; scores: number[] }) {
 		const game = this._gameStore.find(id);
 		game.newRound(scores);
+		this._gameStore.update(game, id);
 	}
 }

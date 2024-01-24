@@ -5,7 +5,7 @@ class GamePresenter {
 	private _id: IGamePresenterProps['id'];
 	private _getGameFromStore: IGamePresenterProps['getGameFromStore'];
 	private _startNewRound: IGamePresenterProps['startNewRound'];
-	private _newScores: number[];
+	private _newScores: string[];
 
 	constructor({ id, getGameFromStore, startNewRound }: IGamePresenterProps) {
 		this._id = id;
@@ -40,12 +40,17 @@ class GamePresenter {
 	};
 
 	startNewRound = () => {
-		this._startNewRound.execute({ id: this._id, scores: this._newScores });
-		this._newScores = Array(this.size).fill(0);
+		try {
+			const scores = this._newScores.map((score) => parseInt(score, 10));
+			this._startNewRound.execute({ id: this._id, scores });
+			this._newScores = Array(this.size).fill(0);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	setNewScore = (score: string, index: number) => {
-		this._newScores[index] = score == '' ? 0 : parseInt(score);
+		this._newScores[index] = score;
 	};
 }
 

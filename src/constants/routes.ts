@@ -8,4 +8,7 @@ export const ROUTES = {
 	Game: {
 		name: 'Game',
 	},
+	GameHistory: {
+		name: 'GameHistory',
+	},
 };

@@ -7,10 +7,10 @@ export default class Game {
 	private _players: IGameProps['players'];
 	private _rounds: number[][];
 
-	constructor({ id, players }: IGameProps) {
+	constructor({ id, players, rounds }: IGameProps) {
 		this._id = id;
 		this._players = players;
-		this._rounds = [];
+		this._rounds = rounds || [];
 		makeAutoObservable(this);
 	}
 
@@ -62,5 +62,13 @@ export default class Game {
 		return this.players.some(
 			(player) => this.getScore(player.id) >= LOSING_SCORE
 		);
+	}
+
+	serialize() {
+		return JSON.stringify({
+			id: this._id,
+			players: this._players,
+			rounds: this._rounds,
+		});
 	}
 }

@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { MAX_NUMBER_OF_PLAYERS } from '../../constants/constants';
 import iCreateNewGamePresenterProps from './CreateNewGamePresenter.types';
+import { ROUTES } from '../../constants/routes';
 
 class CreateNewGamePresenter {
 	private _navigation: iCreateNewGamePresenterProps['navigation'];
@@ -56,7 +57,7 @@ class CreateNewGamePresenter {
 
 	onCreateNewGameButtonPress = () => {
 		const id = this._createNewGame.execute({ players: this.players });
-		this._navigation.navigate({ name: 'Game', params: { id } });
+		this._navigation.navigate({ name: ROUTES.Game.name, params: { id } });
 	};
 }
 

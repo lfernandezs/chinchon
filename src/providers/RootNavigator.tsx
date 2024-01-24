@@ -6,6 +6,7 @@ import CreateNewGame from '../screens/CreateNewGame/CreateNewGame';
 import Home from '../screens/Home/Home';
 import Game from '../screens/Game/Game';
 import { observer } from 'mobx-react-lite';
+import GameHistory from '../screens/GameHistory/GameHistory';
 
 const RootNavigator = () => {
 	const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ const RootNavigator = () => {
 					component={CreateNewGame}
 				/>
 				<Stack.Screen name={ROUTES.Game.name} component={Game} />
+				<Stack.Screen name={ROUTES.GameHistory.name} component={GameHistory} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

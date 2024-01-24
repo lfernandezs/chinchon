@@ -14,11 +14,19 @@ class HomePresenter {
 		return 'Chinchón';
 	}
 
-	get buttonLabel() {
+	get newGameButtonTitle() {
 		return 'Nueva partida';
 	}
 
-	onButtonPress = () => {
+	get historyButtonTitle() {
+		return 'Cargar partida';
+	}
+
+	onHistoryButtonPress = () => {
+		this._navigation.navigate(ROUTES.GameHistory.name);
+	};
+
+	onNewGameButtonPress = () => {
 		this._navigation.navigate(ROUTES.CreateNewGame.name);
 	};
 }

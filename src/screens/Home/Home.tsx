@@ -11,11 +11,18 @@ const Home = () => {
 				{presenter.screenTitle}
 			</Text>
 			<Pressable
+				testID={'game-history'}
+				style={styles.button}
+				onPress={presenter.onHistoryButtonPress}
+			>
+				<Text style={styles.buttonLabel}>{presenter.historyButtonTitle}</Text>
+			</Pressable>
+			<Pressable
 				testID={'new-game'}
 				style={styles.button}
-				onPress={presenter.onButtonPress}
+				onPress={presenter.onNewGameButtonPress}
 			>
-				<Text style={styles.buttonLabel}>{presenter.buttonLabel}</Text>
+				<Text style={styles.buttonLabel}>{presenter.newGameButtonTitle}</Text>
 			</Pressable>
 		</View>
 	);

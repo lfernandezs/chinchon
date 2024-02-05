@@ -23,8 +23,9 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "monochromeImage": "./src/assets/monochrome_icon.png",
+        "foregroundImage": "./src/assets/foreground_icon.png",
+        "backgroundImage": "./src/assets/background_icon.png"
       },
       "package": "com.lfernandezs.chinchon"
     },
